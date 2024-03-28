@@ -19,7 +19,7 @@ STARTERPACK IN UBUNTU (WSL)
 HOW TO RUN ?
 ------
 - `cd coba-coba`
-- `python3 coba2.py`<br>
+- `python3 main.py`<br>
 
 FITUR
 ------
