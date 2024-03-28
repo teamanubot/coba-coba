@@ -19,8 +19,7 @@ def Tidur(duration):
 
 def keluar():
     pid = os.getpid()
-    os.kill(pid, signal.SIGTERM)
-    sys.exit(0)
+    os.killpg(pid, signal.SIGTSTP)
 
 def noticeDefault():
     with open("error.txt", "a") as file:
