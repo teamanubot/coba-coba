@@ -32,7 +32,7 @@ COMING SOON
 - Fitur login
 - Fitur keban otomatis hapus 1 folder script<br>
 
-Sosial Media
+SOSIAL MEDIA
 ------
 - Instagram : [@rivaimunte02](https://instagram.com/rivaimunte02)
 - Gitlab : [@teamanubot](https://gitlab.com/teamanubot)
