@@ -1,16 +1,5 @@
-import os
-import time
-import random
-import threading
-import signal
-import sys
-import pygame
-
-jumlah_lagu = 3
-urutan_pemutaran = []
-
-threadCreationStatus = 0
-current_song_thread = None
+from lib.package import *
+from lib.variable import *
 
 def cetak(*args):
     print(*args)
@@ -80,11 +69,11 @@ def playMusik():
     while True:
         lagu_saat_ini = urutan_pemutaran[pemutaran_selesai]
         if lagu_saat_ini == 0:
-            pygame.mixer.music.load("rapsodi.wav")
+            pygame.mixer.music.load("lagu/rapsodi.wav")
         elif lagu_saat_ini == 1:
-            pygame.mixer.music.load("seventeen.wav")
+            pygame.mixer.music.load("lagu/seventeen.wav")
         elif lagu_saat_ini == 2:
-            pygame.mixer.music.load("tokyo_drift.wav")
+            pygame.mixer.music.load("lagu/tokyo_drift.wav")
         pygame.mixer.music.play()
         while pygame.mixer.music.get_busy():
             time.sleep(0.1)
@@ -120,17 +109,17 @@ def sistemMusik():
         pilihan = input("Masukkan Pilihan Menu Sesuai Nomor Menu Atau Tulis Nama Menunya : ").lower()
         if pilihan == "1" or pilihan == "jkt48 - rapsodi":
             stopPemutaranLagu()
-            pygame.mixer.music.load("rapsodi.wav")
+            pygame.mixer.music.load("lagu/rapsodi.wav")
             pygame.mixer.music.play(loops=-1)
             sistemMenu()
         elif pilihan == "2" or pilihan == "jkt48 - seventeen":
             stopPemutaranLagu()
-            pygame.mixer.music.load("seventeen.wav")
+            pygame.mixer.music.load("lagu/seventeen.wav")
             pygame.mixer.music.play(loops=-1)
             sistemMenu()
         elif pilihan == "3" or pilihan == "tokyo drift - teriyaki boyz":
             stopPemutaranLagu()
-            pygame.mixer.music.load("tokyo_drift.wav")
+            pygame.mixer.music.load("lagu/tokyo_drift.wav")
             pygame.mixer.music.play(loops=-1)
             sistemMenu()
         elif pilihan == "4" or pilihan == "kembali ke awal":
@@ -168,7 +157,7 @@ def sistemPembuka():
     gerakGaris()
     cetak("\n")
     playPemutaranLagu()
-    input("Press Enter to continue...\n")
+    input("Press Enter to continue...")
     if threadCreationStatus == 0:
         sistemMenu()
 
@@ -207,5 +196,3 @@ def sistemInti():
     sistemPembuka()
     if threadCreationStatus == 0:
         sistemMenu()
-
-sistemInti()
