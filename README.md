@@ -2,7 +2,7 @@
 ```
 git clone https://github.com/teamanubot/coba-coba
 ```
-<br>
+
 STARTERPACK IN UBUNTU (WSL)
 ------
 - `sudo apt-get update`
