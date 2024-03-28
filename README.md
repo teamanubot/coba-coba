@@ -34,4 +34,5 @@ COMING SOON
 
 Sosial Media
 ------
-[@rivaimunte](https://instagram.com/rivaimunte02)
+- Instagram : [@rivaimunte02](https://instagram.com/rivaimunte02)
+- Gitlab : [@teamanubot](https://gitlab.com/teamanubot)
