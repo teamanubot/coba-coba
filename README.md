@@ -1,6 +1,6 @@
 # HANYA COBA-COBA
 ```
-git clone https://github.com/teamanubot/coba-coba
+git clone https://github.com/teamanubot/coba-coba.git
 ```
 
 STARTERPACK IN UBUNTU (WSL)
@@ -30,7 +30,7 @@ FITUR
 
 COMING SOON
 ------
-- Nothing <br>
+- Fixing Path <br>
 
 SOSIAL MEDIA
 ------
