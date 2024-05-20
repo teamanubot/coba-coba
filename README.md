@@ -25,12 +25,12 @@ FITUR
 ------
 1. Otomatis Play Lagu saat di Run
 2. Bisa ganti lagu pake menu
-3. End script pakai menu layaknya key CTRL+Z<br>
+3. End script pakai menu layaknya key CTRL+Z
+4. Fitur Login - Banned<br>
 
 COMING SOON
 ------
-- Fitur login
-- Fitur keban otomatis hapus 1 folder script<br>
+- Nothing <br>
 
 SOSIAL MEDIA
 ------
