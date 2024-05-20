@@ -247,5 +247,3 @@ def sistemInti():
     sistemPembuka()
     if threadCreationStatus == 0:
         sistemMenu()
-
-#
