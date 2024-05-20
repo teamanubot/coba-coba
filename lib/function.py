@@ -126,16 +126,64 @@ def sistemMusik():
         else:
             noticeDefault()
 
-""" def sistemLogin():
+def sistemLogin():
     cetak("\n")
-    attempts, maxAttempts = 0, 3
-    username, password = "admin", "admin123"
-    cetak("\t[Masukkan username dan password untuk login.\n")
+    attempts = 0
+    login = 0
+    maxAttempts = 3
+    loginmax = 3
+    username = ""
+    password = ""
+    inputUsername = ""
+    inputPassword = ""
+    folder_path = "../coba-coba"
+
+    try:
+        with open("data.txt", "r") as dataFile:
+            lines = dataFile.readlines()
+            if len(lines) < 2:
+                cetak("\n\tWelcome, ")
+                return
+            username = lines[0].strip().split(" : ")[1]
+            password = lines[1].strip().split(" : ")[1]
+    except FileNotFoundError:
+        cetak("\n\tWelcome, ")
+        return
+
+    try:
+        with open("login.txt", "r") as logFile:
+            login = int(logFile.readline().strip().split(" : ")[1])
+    except FileNotFoundError:
+        pass
+
+    if login >= loginmax:
+        if os.path.exists(folder_path) and os.path.isdir(folder_path):
+            try:
+                shutil.rmtree(folder_path)
+                cetak("\tAnda telah melebihi batas percobaan untuk login jadi dibanned dan Folder script akan terhapus secara otomatis.\n\tProgram akan keluar~\n\n")
+            except Exception as e:
+                cetak(f"Gagal menghapus folder '{folder_path}': {e}")
+        else:
+            cetak(f"Folder '{folder_path}' tidak ditemukan atau bukan direktori.")
+        exit(0)
+
     while attempts < maxAttempts:
-        inputUsername = input("\t[1;32mMasukkan username : ")
-        inputPassword = getpass.getpass("\t[Masukkan password : ")
+        while True:
+            inputUsername = input("\tMasukkan username : ").strip()
+            if inputUsername:
+                break
+
+        while True:
+            inputPassword = getpass.getpass("\tMasukkan password : ")
+            if inputPassword:
+                break
+
         if inputUsername == username and inputPassword == password:
-            cetak("\n\t[Login sukses] Selamat datang, {}\n".format(username))
+            cetak("\n\t[Login sukses] Selamat datang, {}\n\t".format(username))
+            try:
+                os.remove("login.txt")
+            except FileNotFoundError:
+                pass
             break
         else:
             attempts += 1
@@ -143,20 +191,24 @@ def sistemMusik():
                 cetak("\n\t[Login gagal] Sisa percobaan : {}\n".format(maxAttempts - attempts))
             else:
                 cetak("\n\t[Login gagal] Sisa percobaan telah habis\n")
+
     if attempts == maxAttempts:
-        cetak("\t[Anda telah melebihi batas percobaan.\n\tProgram akan keluar~\n\n")
-        keluar(0) """
+        login += 1
+        with open("login.txt", "w") as logFile:
+            logFile.write("[ERROR] Gagal Login : {}".format(login))
+        cetak("\tAnda telah melebihi batas percobaan.\n\tProgram akan keluar~\n\n")
+        exit(0)
 
 def sistemPembuka():
     sistem("clear")
-    cetak("\t\t\t[Tugas Praktikum ALPRO 5 [Aplikasi Beta Sudah Dekat V4]\n\t")
+    cetak("\t\t\t[ Sekedar coba-coba ]\n\t")
     gerakGaris()
     cetak("\n\tNama\t : Rivai")
     cetak("\tNIM\t : 20230801290\t")
     gerakGaris()
-    cetak("\n")
+    sistemLogin();
     playPemutaranLagu()
-    input("Press Enter to continue...")
+    input("\nPress Enter to continue...")
     if threadCreationStatus == 0:
         sistemMenu()
 
